@@ -1,0 +1,70 @@
+
+    <div>
+        <h2>Explanation of main.hbs</h2>
+        <p>Main templet of the pages like for employee.hbs and description.hbs, rendered using Handlebars template engine with body inside triple braces. The content inside this element will be dynamically replaced by the content of the specific page being rendered. In this main hbs templet for styling we linked it to external stylesheets, used Bootstrap CSS framework version 4.3.1.</p>
+    </div>
+    <div>
+        <h2>Explanation of addEmployee.html</h2>
+        <b>HTML structure</b>
+        <p>Used Bootstrap as a stylesheet on this page also. This contains three navigation for Employees, Description, and Add Employee.</p>
+        <b>Form for Adding employee</b>
+        <p>Created the form for employee data collection. The form's route is set to "/employees/add". The onsubmit attribute calls the checkLastName() function to validate the last name before form submission. The form is divided into two fieldsets: Employee Information and Personal Information. Added multiple Input fields for first name, last name, email, address, office employment checkbox, enrollment status radio buttons, and class selection dropdown are included. Finally, a submit button is provided to submit the form and the checkLastName will trigger onsubmit.</p>
+    </div>
+    <div>
+        <h2>Explanation of checkLastName() function</h2>
+        <p>This JavaScript function named checkLastName() is designed to validate the input provided in the last name field of a form before submission. Here's a breakdown of how it works. </p>
+
+<b>Retrieve Last Name</b>
+
+<p>The function begins by obtaining the value of the last name input field using document.getElementById('lastName').value.trim(). The .trim() method is used to remove any leading or trailing whitespace from the input.</p>
+
+<b>Check for Empty Last Name</b>
+<p>It checks if the last name is empty (lastName === ''). If it is, an alert message is displayed to the user indicating that the last name cannot be empty.
+Additionally, it sets focus back to the last name input box using document.getElementById('lastName').focus() to prompt the user to enter a value.
+Finally, it returns false to prevent form submission, as an empty last name is not valid.</p>
+
+<b>Check for Alphabetic Characters Only</b>
+<p>If the last name is not empty, it proceeds to validate whether it contains only alphabetic characters using a regular expression.
+The regular expression ^[A-Za-z]+$ matches only strings that consist entirely of alphabetic characters (both uppercase and lowercase).
+If the last name fails this validation, another alert message is displayed indicating that it must contain only alphabetic characters, and focus is set back to the last name input box.
+Again, it returns false to prevent form submission if the last name is invalid.</p>
+
+<b>Return Validation Result</b>
+<p>If the last name passes both checks, the function returns true, indicating that the last name input is valid and the form submission can proceed.
+Overall, this function ensures that the last name input field is not empty and contains only alphabetic characters before allowing the form to be submitted. If any validation fails, appropriate alert messages are displayed to guide the user, and the form submission is prevented.</p>
+    </div>
+    <div>
+        <h2>Explanation of server.js</h2>
+        <p><b>Used Modules</b>
+
+<p>express: Express.js framework for building web applications.
+path: Node.js module for working with file and directory paths.
+express-handlebars: Express.js view engine for rendering Handlebars templates.
+officeData.js: Custom module for handling data related to office employees.</p>
+
+<b>Creating Express Application</b>
+<p>const app = express();: Creates an instance of the Express application.</p>
+
+
+<b>Setting Up the Handlebars View Engine</b>
+<p>app.engine('.hbs', exphbs.engine({...}));: Configures the Express application to use Handlebars as the view engine. It specifies the file extension for Handlebars templates and the default layout.
+app.set('view engine', '.hbs') this sets the default file extension for view templates to .hbs.</p>
+
+<b>Middleware</b>
+<p>express.static("public"): This serves static files from the "public" directory.
+express.urlencoded({ extended: true }): Parses incoming request bodies with urlencoded payloads.</p>
+
+<b>Routes</b>
+<ul>
+  <li>app.get("/employees/add", ): Handles GET requests to "/employees/add" by sending the addEmployee.html file.</li>
+  <li>app.post("/employees/add", ): Handles POST requests to "/employees/add" by adding a new employee using data from the request body and redirecting to "/employees".</li>
+  <li>app.get("/employees", ): Handles GET requests to "/employees" by retrieving all employees and rendering the "employees" view with the employee data.</li>
+  <li>app.get("/description", ): Handles GET requests to "/description" by rendering the "description" view.</li>
+  <li>app.get("/PartTimer", ): Handles GET requests to "/PartTimer" by retrieving data for part-time employees and sending it as a JSON response.</li>
+  <li>app.use((req,res) => { }): Handles requests that don't match any of the defined routes by sending a "The requested URL was not found on this server." response with a status code of 404.</li>
+</ul>
+
+<b>Starting the Server</b>
+<p>data.initialize().then( ): Initializes data handling.
+app.listen(HTTP_PORT, ): Starts the server on the specified port (process.env.PORT or default port 8080) and logs a message indicating that the server is running.</p></p>
+</div>
