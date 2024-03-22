@@ -1,15 +1,16 @@
 {
-  "name": "employeeapp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "dependencies": {
+    "express": "^4.19.1",
+    "express-handlebars": "^7.1.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Proshenjit",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.19.1"
-  }
+  "name": "employeeapp",
+  "description": "��#\u0000 \u0000a\u0000s\u0000s\u0000i\u0000g\u0000n\u0000m\u0000e\u0000n\u0000t\u00000\u00005\u0000\r\u0000 \u0000#\u0000 \u0000a\u0000s\u0000s\u0000i\u0000g\u0000n\u0000m\u0000e\u0000n\u0000t\u00000\u00005\u0000\r\u0000 \u0000",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "proshenjit",
+  "license": "ISC"
 }
