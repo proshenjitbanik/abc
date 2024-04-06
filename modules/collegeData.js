@@ -220,14 +220,14 @@ module.exports.getCourseById = function (id) {
     Course.findAll({ where: { courseId: id } })
       .then((courses) => {
         if (courses.length > 0) {
-          resolve(courses[0]); // Resolve promise with data[0] (first object) if course is found
+          resolve(courses[0]); /
         } else {
-          reject("No results returned"); // Reject promise with appropriate message if no course is found
+          reject("No results returned"); 
         }
       })
       .catch((err) => {
         console.error("Error retrieving course by ID:", err);
-        reject("No results returned"); // Reject promise with appropriate message if an error occurs
+        reject("No results returned"); 
       });
   });
 }
