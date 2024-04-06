@@ -220,7 +220,7 @@ module.exports.getCourseById = function (id) {
     Course.findAll({ where: { courseId: id } })
       .then((courses) => {
         if (courses.length > 0) {
-          resolve(courses[0]); /
+          resolve(courses[0]); 
         } else {
           reject("No results returned"); 
         }
