@@ -1,3 +1,21 @@
+
+
+/********************************************************************************* 
+ * WEB700 – Assignment 06 
+ * I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part of this 
+ * assignment has been copied manually or electronically from any other source (including web sites) or 
+ * distributed to other students. 
+ * 
+ * Name: Proshenjit Student ID: 167256221 Date: April 06 2024  
+ * 
+ * Online (Cyclic) Link: https://kind-ruby-kitten-tam.cyclic.app 
+ * 
+********************************************************************************/
+
+
+
+
+
 const express = require("express");
 const path = require("path");
 const exphbs = require("express-handlebars");
